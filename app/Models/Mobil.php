@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mobil extends Model
 {
     use HasFactory;
-    protected $connection = 'mongodb';
-    protected $collection = 'mobils';
-    protected $fillable =['tipe','kapasitas_penumpang','mesin'];
+    // protected $connection = 'mongodb';
+    // protected $collection = 'mobils';
+    // protected $fillable =['tipe','kapasitas_penumpang','mesin'];
 }

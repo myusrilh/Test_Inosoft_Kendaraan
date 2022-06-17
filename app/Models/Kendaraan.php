@@ -10,6 +10,6 @@ class Kendaraan extends Model
     use HasFactory;
     protected $connection = 'mongodb';
     protected $collection = 'kendaraans';
-    protected $fillable =['tipe_kendaraan','warna','tahun_keluaran','mesin','harga'];
+    protected $fillable =['tipe_kendaraan','warna','tahun_keluaran','mesin','harga','tipe','kapasitas_penumpang','tipe_suspensi','tipe_transmisi'];
 
 }

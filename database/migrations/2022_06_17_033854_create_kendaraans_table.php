@@ -24,6 +24,7 @@ class CreateKendaraansTable extends Migration
             $table->string('tipe_transmisi')->nullable();
             $table->string('tipe_suspensi')->nullable();
             $table->bigInteger('harga');
+            $table->boolean('terjual');
             $table->timestamps();
         });
     }

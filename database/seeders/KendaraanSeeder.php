@@ -25,7 +25,8 @@ class KendaraanSeeder extends Seeder
                 'tipe_transmisi' => null,
                 'tipe_suspensi' => null,
                 'tipe' => 'SUV',
-                'harga' => 230000000
+                'harga' => 230000000,
+                'terjual' => true
             ],
             [
                 'tahun_keluaran' => 2010,
@@ -36,7 +37,8 @@ class KendaraanSeeder extends Seeder
                 'tipe' => null,
                 'tipe_transmisi' => 'manual',
                 'tipe_suspensi' => 'telescopic up',
-                'harga' => 25000000
+                'harga' => 25000000,
+                'terjual' => false
             ]
         ]);
     }
