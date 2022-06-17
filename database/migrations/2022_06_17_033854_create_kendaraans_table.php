@@ -19,6 +19,10 @@ class CreateKendaraansTable extends Migration
             $table->integer('tahun_keluaran');
             $table->string('warna');
             $table->string('mesin');
+            $table->string('kapasitas_penumpang')->nullable();
+            $table->string('tipe')->nullable();
+            $table->string('tipe_transmisi')->nullable();
+            $table->string('tipe_suspensi')->nullable();
             $table->bigInteger('harga');
             $table->timestamps();
         });

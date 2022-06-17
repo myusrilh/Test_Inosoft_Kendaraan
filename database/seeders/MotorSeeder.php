@@ -14,10 +14,8 @@ class MotorSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('motors')->insert([
-            'mesin' => '1 silinder',
-            'tipe_transmisi' => 'manual',
-            'tipe_suspensi' => 'telescopic up'
-        ]);
+        // DB::table('motors')->insert([
+            
+        // ]);
     }
 }

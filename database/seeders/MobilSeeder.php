@@ -14,10 +14,8 @@ class MobilSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mobils')->insert([
-            'mesin' => 'diesel',
-            'kapasitas_penumpang' => '6 orang',
-            'tipe' => 'SUV'
-        ]);
+        // DB::table('mobils')->insert([
+            
+        // ]);
     }
 }
