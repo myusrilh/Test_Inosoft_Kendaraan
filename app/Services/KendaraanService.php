@@ -50,4 +50,8 @@ class KendaraanService{
         return $this->kendaraanRepository->findKendaraanById($id);
     }
 
+    public function getAllPenjualan(){
+        return $this->kendaraanRepository->getPenjualan();
+    }
+
 }

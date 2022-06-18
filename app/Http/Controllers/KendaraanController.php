@@ -39,10 +39,9 @@ class KendaraanController extends Controller
             ], Response::HTTP_OK);
     }
     public function findById($id){
-            $bson = new BSONArray($id);
             return response()->json([
                 'success'=>true,
-                'data' => $this->kendaraanService->findKendaraanById($bson['id'])
+                'data' => $this->kendaraanService->findKendaraanById($id)
             ], Response::HTTP_OK);
     }
 
@@ -96,6 +95,22 @@ class KendaraanController extends Controller
                     'credentials' => $deleted
                 ], Response::HTTP_OK);
             }
+    }
+
+    public function showPenjualan(){
+        $penjualan = $this->kendaraanService->getAllPenjualan();
+        if($penjualan->count() < 0){
+            return response()->json([
+                'success' => false,
+                'data' => $penjualan
+            ], Response::HTTP_OK);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $penjualan
+        ], Response::HTTP_OK);
+
     }
 
 }

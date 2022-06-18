@@ -9,41 +9,33 @@ class KendaraanRepository{
     
     public function getAllMotor(){
         
-        $getMotor = Kendaraan::where([
-            'tipe_kendaraan','=','motor'
-            ])->get();
+        $getMotor = Kendaraan::where('tipe_kendaraan','=','motor')->get();
         return $getMotor;
         
     }
     public function getAllMobil(){
         
-        $getMobil = Kendaraan::where([
-            'tipe_kendaraan','=','mobil'
-            ])->get();
-            return $getMobil;
-            
-        }
+        $getMobil = Kendaraan::where('tipe_kendaraan','=','mobil')->get();
+        return $getMobil;
+        
+    }
         
     public function getPenjualan(){
-        $getPenjualan = Kendaraan::where([
-            'terjual','=',true
-            ])->get();
-            return $getPenjualan;
-        }
+        $getPenjualan = Kendaraan::where('terjual','=',true)->get();
+        return $getPenjualan;
+    }
 
     public function getPenjualanMotor(){
-        $getPenjualanMotor = Kendaraan::where([
-            ['terjual','=',true],
-            ['tipe_kendaraan','=','motor'],
-            ])->get();
-            return $getPenjualanMotor;
-        }
+        $getPenjualanMotor = Kendaraan::where('terjual','=',true)
+            ->where('tipe_kendaraan','=','motor')
+            ->get();
+        return $getPenjualanMotor;
+    }
         
     public function getPenjualanMobil(){
-        $getPenjualanMobil = Kendaraan::where([
-            ['terjual','=',true],
-            ['tipe_kendaraan','=','mobil'],
-            ])->get();
+        $getPenjualanMobil = Kendaraan::where('terjual','=',true)
+            ->where('tipe_kendaraan','=','mobil')
+            ->get();
         return $getPenjualanMobil;
     }
     public function getStockMotor(){
@@ -51,8 +43,8 @@ class KendaraanRepository{
             ['terjual','=',false],
             ['tipe_kendaraan','=','motor'],
             ])->get();
-            return $getStockMotor;
-        }
+        return $getStockMotor;
+    }
         
     public function getStockMobil(){
         $getStockMobil = Kendaraan::where([

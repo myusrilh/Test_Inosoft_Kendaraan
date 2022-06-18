@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\MobilController;
+use App\Http\Controllers\MotorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,13 +26,20 @@ Route::group(['middleware'=>'jwt.auth'], function(){
     Route::get('getUser', [ApiController::class, 'get_user']);
     
     //Route for kendaraan
-    Route::get('showAll',[KendaraanController::class,'show']);
+    Route::get('show',[KendaraanController::class,'show']);
+    Route::get('show/penjualan',[KendaraanController::class,'showPenjualan']);
     Route::post('store',[KendaraanController::class,'store']);
     Route::put('update/{id}',[KendaraanController::class,'update']);
     Route::delete('delete/{id}',[KendaraanController::class,'delete']);
 
-});
+    //Route for mobil
+    Route::get('show/mobil',[MobilController::class,'showAllMobil']);
+    Route::get('stock/mobil',[MobilController::class,'showStockMobil']);
+    Route::get('penjualan/mobil',[MobilController::class,'showPenjualanMobil']);
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+    //Route for motor
+    Route::get('show/motor',[MotorController::class,'showAllMotor']);
+    Route::get('stock/motor',[MotorController::class,'showStockMotor']);
+    Route::get('penjualan/motor',[MotorController::class,'showPenjualanMotor']);
+
+});

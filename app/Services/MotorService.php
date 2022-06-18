@@ -40,6 +40,6 @@ class MotorService extends KendaraanService{
     }
 
     public function getPenjualanMotor(){
-        $this->motorRepository->getPenjualanMotor();
+        return $this->motorRepository->getPenjualanMotor();
     }
 }

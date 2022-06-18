@@ -40,6 +40,6 @@ class MobilService extends KendaraanService{
     }
 
     public function getPenjualanMobil(){
-        $this->mobilRepository->getPenjualanMobil();
+        return $this->mobilRepository->getPenjualanMobil();
     }
 }
