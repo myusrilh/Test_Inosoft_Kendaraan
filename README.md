@@ -26,8 +26,10 @@ Make sure you have installed all of this requirement
         DB_HOST=127.0.0.1
         DB_PORT=27017
         DB_DATABASE=<database name>
-        DB_USERNAME=
-        DB_PASSWORD=
+        DB_USERNAME=<username>
+        DB_PASSWORD=<password>
+        
+   fill the DB_DATABASE with your database name (without '<' and '>'), username and password is optional
 
 5. Run `php artisan key:generate` command to generate APP_KEY on `.env`.
 6. Run `php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"` before `php artisan jwt:secret` command to generate JWT_SECRET on `.env`. This part is important to make the project produce JWT Token.
