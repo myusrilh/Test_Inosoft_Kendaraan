@@ -61,20 +61,21 @@ class KendaraanController extends Controller
                 'data' => $this->kendaraanService->store($validatedData)
             ], Response::HTTP_OK);
     }
-    public function update($id, $data){
+    
+    public function update(Request $request){
 
-            $updated = $this->kendaraanService->update($id, $data);
+            $updated = $this->kendaraanService->update($request->all());
             
             if($updated){
                 return response()->json([
                     'success'=>true,
-                    'message' => 'Data Kendaraan on ID: '.$id.' updated!',
-                    'data' => $data
+                    'message' => 'Data Kendaraan on ID: '.$request->id_kendaraan.' updated!',
+                    'data' => $request->all()
                 ], Response::HTTP_OK);
             }else{
                 return response()->json([
                     'success'=>false,
-                    'message' => 'Data Kendaraan on ID: '.$id.' failed to update!'
+                    'message' => 'Data Kendaraan on ID: '.$request->id_kendaraan.' failed to update!'
                 ], Response::HTTP_OK);
             }
         

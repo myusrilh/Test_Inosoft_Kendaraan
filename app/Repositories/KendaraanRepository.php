@@ -64,26 +64,11 @@ class KendaraanRepository{
         return Kendaraan::all();
     }
 
-    public function update($data, $id){
-
-        $kendaraan = Kendaraan::where('id_kendaraan',$id);
-
-        $kendaraan->tipe_kendaraan = $data['tipe_kendaraan'];
-        $kendaraan->warna = $data['warna'];
-        $kendaraan->harga = $data['harga'];
-        $kendaraan->terjual = $data['terjual'];
-        $kendaraan->tahun_keluaran = $data['tahun_keluaran'];
-        $kendaraan->mesin = $data['mesin'];
+    public function update($data){
         
-        if($data['tipe_kendaraan'] == 'mobil'){
-            $kendaraan->tipe = $data['tipe'];
-            $kendaraan->kapasitas_penumpang = $data['kapasitas_penumpang'];
-        }else if($data['tipe_kendaraan'] == 'motor'){
-            $kendaraan->tipe_transmisi = $data['tipe_transmisi'];
-            $kendaraan->tipe_suspensi = $data['tipe_suspensi'];
-        }
-
-        return $kendaraan->update();
+        $kendaraan = Kendaraan::where('id_kendaraan',$data['id_kendaraan']);
+        
+        return $kendaraan->update($data);
 
     }
     public function findKendaraanById($id){

@@ -23,13 +23,14 @@ Route::post('register', [ApiController::class, 'register']);
 Route::group(['middleware'=>'jwt.auth'], function(){
     
     Route::get('logout', [ApiController::class, 'logout']);
-    Route::get('getUser', [ApiController::class, 'get_user']);
+    Route::get('get/user', [ApiController::class, 'get_user']);
     
     //Route for kendaraan
     Route::get('show',[KendaraanController::class,'show']);
     Route::get('show/penjualan',[KendaraanController::class,'showPenjualan']);
+    Route::get('show/kendaraan/{id}',[KendaraanController::class,'findById']);
     Route::post('store',[KendaraanController::class,'store']);
-    Route::put('update/{id}',[KendaraanController::class,'update']);
+    Route::post('update',[KendaraanController::class,'update']);
     Route::delete('delete/{id}',[KendaraanController::class,'delete']);
 
     //Route for mobil

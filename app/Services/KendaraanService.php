@@ -38,8 +38,8 @@ class KendaraanService{
         return $this->kendaraanRepository->store($data);
     }
 
-    public function update($data, $id){
-        return $this->kendaraanRepository->update($data, $id);
+    public function update($data){
+        return $this->kendaraanRepository->update($data);
     }
 
     public function deleteKendaraanById($id){
