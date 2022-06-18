@@ -10,12 +10,23 @@
 ## Guide To Use Project
 
 1. Download or clone the project first using `git`
-2. Go to the downloaded project directory `cd ..\Test_Inosoft_Kendaraan`
+2. Go to the downloaded project directory `cd ..\<path>\<to>\<your project>\Test_Inosoft_Kendaraan`
 3. Enter command `composer install`
-4. Copy the `.env.example` and rename it to `.env` and setup your .env like this
-![Image]()
-5. Enter command `php artisan generate:key`
-6. Enter command ``
+4. Copy the `.env.example` and rename it to `.env` and setup your `.env` like below:
+    
+        DB_CONNECTION=mongodb
+        DB_HOST=127.0.0.1
+        DB_PORT=27017
+        DB_DATABASE=<database name>
+        DB_USERNAME=
+        DB_PASSWORD=
+
+5. Run `php artisan key:generate` command to generate APP_KEY on `.env`.
+6. Run `php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"` before `php artisan jwt:secret` command to generate JWT_SECRET on `.env`. This part is important to make the project produce JWT Token.
+
+7. After that, run `php artisan migrate` to create table from laravel. If you need some dummy data, you can add additional command `--seed` like this one `php artisan migrate --seed`.
+
+8. Last step, run `php artisan serve` to run the project. Enjoy!
 
 
 ## Code of Conduct

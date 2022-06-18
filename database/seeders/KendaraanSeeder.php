@@ -17,6 +17,7 @@ class KendaraanSeeder extends Seeder
     {
         DB::table('kendaraans')->insert([
             [
+                'id_kendaraan' => 0,
                 'tahun_keluaran' => 2012,
                 'warna' => 'kuning',
                 'tipe_kendaraan' => 'mobil',
@@ -29,6 +30,7 @@ class KendaraanSeeder extends Seeder
                 'terjual' => true
             ],
             [
+                'id_kendaraan' => 1,
                 'tahun_keluaran' => 2010,
                 'warna' => 'hitam',
                 'tipe_kendaraan' => 'motor',

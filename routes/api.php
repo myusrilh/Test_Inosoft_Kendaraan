@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\KendaraanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +21,13 @@ Route::post('register', [ApiController::class, 'register']);
 Route::group(['middleware'=>'jwt.auth'], function(){
     
     Route::get('logout', [ApiController::class, 'logout']);
-    Route::get('get_user', [ApiController::class, 'get_user']);
+    Route::get('getUser', [ApiController::class, 'get_user']);
     
+    //Route for kendaraan
+    Route::get('showAll',[KendaraanController::class,'show']);
+    Route::post('store',[KendaraanController::class,'store']);
+    Route::put('update/{id}',[KendaraanController::class,'update']);
+    Route::delete('delete/{id}',[KendaraanController::class,'delete']);
 
 });
 
