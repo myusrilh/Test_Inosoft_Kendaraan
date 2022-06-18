@@ -7,6 +7,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## What To Prepare?
+Make sure you have installed all of this requirement
+
+- Laravel 8
+- PHP 8
+- MongoDB ^4.2
+- Composer ^2.*
+
 ## Guide To Use Project
 
 1. Download or clone the project first using `git`
